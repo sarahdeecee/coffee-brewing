@@ -19,3 +19,6 @@ This is a web app to guide users in various methods of brewing coffee.
 - grind size
 - brew time (start, end time)
 - instructions
+
+## Notes
+- React or EJS
