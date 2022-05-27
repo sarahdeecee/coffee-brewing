@@ -7,9 +7,11 @@ const coldMethods = ['Iced', 'Cold Brew'];
 const BrewMethods = props => {
   const methodButtons = hotMethods.map(method => <Dropdown.Item href="#" key={method}>{method}</Dropdown.Item>);
 
-  return <Dropdown.Menu>
-    {methodButtons}
+  return <DropdownButton variant="success" id="dropdown-basic-button" title="Dropdown button">
+    <Dropdown.Menu>
+      {methodButtons}
     </Dropdown.Menu>
+  </DropdownButton>
 }
 
 export default BrewMethods;
