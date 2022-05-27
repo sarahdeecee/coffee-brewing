@@ -1,6 +1,6 @@
 import * as React from 'react';
 import { useState } from 'react';
-import { Dropdown, DropdownButton, Form, FormControl, FormGroup } from 'react-bootstrap';
+import { Dropdown, DropdownButton, Form, FormControl, FormGroup, Row, Col } from 'react-bootstrap';
 
 const Calculations = props => {
   const [value, setValue] = useState('Method');
@@ -14,14 +14,30 @@ const Calculations = props => {
   
   return <div className="">
     <Form>
-      <Form.Group className="mb-3">
-        <Form.Label>Brewing Method</Form.Label>
-        <Form.Select title="Choose a brewing method">{optionsSelect}</Form.Select>
+      <Form.Group as={Row} className="mb-3">
+        <Form.Label column sm="2">Brewing Method</Form.Label>
+        <Col sm="10">
+          <Form.Select sm="10" title="Choose a brewing method">{optionsSelect}</Form.Select>
+        </Col>
       </Form.Group>
-    <Form.Label>Amount of Coffee:</Form.Label>
-    <Form.Control type="number" name="coffee-g" />
-    <Form.Label>Amount of Water:</Form.Label>
-    <Form.Control type="number" name="water-ml" />
+      <Form.Group as={Row} className="mb-3">
+        <Form.Label column sm="2">Amount of Coffee:</Form.Label>
+        <Col sm="10">
+          <Form.Control type="number" name="brew-coffee" />
+        </Col>
+      </Form.Group>
+      <Form.Group as={Row} className="mb-3">
+        <Form.Label column sm="2">Amount of Water:</Form.Label>
+        <Col sm="10">
+          <Form.Control type="number" name="brew-water" />
+        </Col>
+      </Form.Group>
+      <Form.Group as={Row} className="mb-3">
+        <Form.Label column sm="2">Brew Time:</Form.Label>
+        <Col sm="10">
+          <Form.Control type="time" name="brew-time" />
+        </Col>
+      </Form.Group>
     </Form>
   </div>
 }
