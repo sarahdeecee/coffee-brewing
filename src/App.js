@@ -1,23 +1,16 @@
-import logo from './logo.svg';
 import './App.css';
+import HotCold from './pages/HotCold';
+import BrewMethods from './pages/BrewMethods';
+import Calculations from './pages/Calculations';
+
 
 function App() {
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <h1>Coffee Brewing</h1>
+      <HotCold />
+      <BrewMethods />
+      <Calculations />
     </div>
   );
 }
