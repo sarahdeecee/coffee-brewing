@@ -1,17 +1,15 @@
 import React, { Component } from 'react';
-import { Dropdown, DropdownButton } from 'react-bootstrap';
+import { Button } from 'react-bootstrap';
 
 const hotMethods = ['Pour Over', 'Press', 'Percolate'];
 const coldMethods = ['Iced', 'Cold Brew'];
 
 const BrewMethods = props => {
-  const methodButtons = hotMethods.map(method => <Dropdown.Item href="#" key={method}>{method}</Dropdown.Item>);
+  const methodButtons = hotMethods.map(method => <Button key={method}>{method}</Button>);
 
-  return <DropdownButton variant="success" id="dropdown-basic-button" title="Dropdown button">
-    <Dropdown.Menu>
-      {methodButtons}
-    </Dropdown.Menu>
-  </DropdownButton>
+  return <div>
+    {methodButtons}
+  </div>  
 }
 
 export default BrewMethods;
