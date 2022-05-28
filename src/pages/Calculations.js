@@ -5,7 +5,7 @@ import { useState } from 'react';
 import { Form, FormControl, InputGroup, Row, Col } from 'react-bootstrap';
 
 const Calculations = props => {
-  const { theme, timeLeft, setTimeLeft, setTimerOn } = props;
+  const { theme, timeLeft, setTimeLeft, timerOn, setTimerOn } = props;
   const [method, setMethod] = useState({
     method: 'Pour over',
     ratio: 60,
@@ -118,7 +118,7 @@ const Calculations = props => {
       </Form.Group>
     </Form>
     <Instructions method={method} brewWater={brewWater} theme={theme} />
-    <Timer method={method} brewWater={brewWater} theme={theme} timeLeft={timeLeft} setTimeLeft={setTimeLeft} setTimerOn={setTimerOn} brewTime={brewMethods[method.method].timer} />
+    <Timer method={method} brewWater={brewWater} theme={theme} timeLeft={timeLeft} setTimeLeft={setTimeLeft} timerOn={timerOn} setTimerOn={setTimerOn} brewTime={brewMethods[method.method].timer} />
   </>
 }
 

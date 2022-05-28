@@ -19,6 +19,7 @@ function App() {
     if (timeLeft.seconds === 0) {
       if (timeLeft.minutes === 0) {
         if (timeLeft.hours === 0) {
+          setTimerOn(false);
           return 0;
         } else {
           return {...timeLeft, hours: timeLeft.hours - 1, minutes: 59};
@@ -43,7 +44,7 @@ function App() {
     <div className={`App ${theme} size-${size}`}>
       <Container fluid>
         <NavMenu theme={theme} setTheme={setTheme} size={size} setSize={setSize} />
-        <Calculations theme={theme} timeLeft={timeLeft} setTimeLeft={setTimeLeft} setTimerOn={setTimerOn} />
+        <Calculations theme={theme} timeLeft={timeLeft} setTimeLeft={setTimeLeft} timerOn={timerOn} setTimerOn={setTimerOn} />
       </Container>
     </div>
   );
