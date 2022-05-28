@@ -1,11 +1,12 @@
 import './App.css';
 import Calculations from './pages/Calculations';
+import NavMenu from './pages/Navbar';
 import { Container } from 'react-bootstrap'
 
 function App() {
   return (
     <Container fluid>
-      <h1>Coffee Brewing</h1>
+      <NavMenu />
       <Calculations />
     </Container>
   );
