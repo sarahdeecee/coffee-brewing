@@ -27,31 +27,31 @@ const Calculations = props => {
       ratio: 60,
       grind: 'Medium to medium-fine',
       temperature: '98°C (just off the boil)',
-      time: 0
+      time: '2 minutes'
     },
     'French press': {
       ratio: 60,
       grind: 'Coarse',
       temperature: '94°C (let sit for 1 min after boiling)',
-      time: 240
+      time: '4 minutes'
     },
     'Aeropress': {
       ratio: 62.5,
       grind: 'Medium to fine',
       temperature: '80°C',
-      time: 0
+      time: '10 seconds'
     },
     'Moka pot': {
       ratio: 130,
       grind: 'Fine',
       temperature: '95°C',
-      time: 0
+      time: '4-5 minutes'
     },
     'Cold brew': {
       ratio: 125,
       grind: 'Extra coarse',
       temperature: 'Room temperature or cold',
-      time: 0
+      time: '12-24 hours'
     }
   };
 
@@ -103,7 +103,7 @@ const Calculations = props => {
       <Form.Group as={Row} className="mb-3 align-items-center">
         <Form.Label column sm="2">Brew Time:</Form.Label>
         <Col sm="10">
-            {brewMethods[method.method].time} seconds
+            {brewMethods[method.method].time}
         </Col>
       </Form.Group>
     </Form>
