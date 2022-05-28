@@ -1,6 +1,7 @@
 import * as React from 'react';
+import Instructions from './Instructions';
 import { useState } from 'react';
-import { Dropdown, DropdownButton, Form, FormControl, InputGroup, Row, Col } from 'react-bootstrap';
+import { Form, FormControl, InputGroup, Row, Col } from 'react-bootstrap';
 
 const Calculations = props => {
   const [method, setMethod] = useState({
@@ -97,6 +98,7 @@ const Calculations = props => {
         </Col>
       </Form.Group>
     </Form>
+    <Instructions />
   </div>
 }
 
