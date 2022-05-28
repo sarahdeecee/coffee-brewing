@@ -9,8 +9,8 @@ function App() {
     <div className="App">
       <Container fluid>
         <h1>Coffee Brewing</h1>
-        <HotCold />
-        <BrewMethods />
+        {/* <HotCold />
+        <BrewMethods /> */}
         <Calculations />
       </Container>
     </div>
