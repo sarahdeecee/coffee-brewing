@@ -26,27 +26,32 @@ const Calculations = props => {
     'Pour over': {
       ratio: 60,
       grind: 'Medium to medium-fine',
-      temperature: '98°C (just off the boil)'
+      temperature: '98°C (just off the boil)',
+      time: 0
     },
     'French press': {
       ratio: 60,
       grind: 'Coarse',
-      temperature: '94°C (let sit for 1 min after boiling)'
+      temperature: '94°C (let sit for 1 min after boiling)',
+      time: 240
     },
     'Aeropress': {
       ratio: 62.5,
       grind: 'Medium to fine',
-      temperature: '80°C'
+      temperature: '80°C',
+      time: 0
     },
     'Moka pot': {
       ratio: 130,
       grind: 'Fine',
-      temperature: '95°C'
+      temperature: '95°C',
+      time: 0
     },
     'Cold brew': {
       ratio: 125,
       grind: 'Extra coarse',
-      temperature: 'Room temperature or cold'
+      temperature: 'Room temperature or cold',
+      time: 0
     }
   };
 
@@ -104,7 +109,7 @@ const Calculations = props => {
         </Col>
       </Form.Group>
     </Form>
-    <Instructions />
+    <Instructions method={method} brewWater={brewWater} />
   </div>
 }
 
