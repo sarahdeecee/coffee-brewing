@@ -42,19 +42,23 @@ const Instructions = props => {
       <li>Insert plunger and press gently, pausing when you feel resistance, until plunger reaches grounds.</li>
       <li>Remove filter cap, push plunder to eject used coffee and rinse seal.</li>
     </ol>
-    <Table>
-      <tr>
-        <th>Espresso</th>
-        <th>American</th>
-        <th>Latte</th>
-        <th>Cold brew</th>
-      </tr>
-      <tr>
-        <td>Drink as is.</td>
-        <td>Add water to make an 8oz (237ml) coffee.</td>
-        <td>Add milk to make an 8oz (237ml) coffee.</td>
-        <td>Add room temperature or ice water to make an 8oz (237ml) cold brew.</td>
-      </tr>
+    <Table variant={props.theme}>
+      <thead>
+        <tr>
+          <th>Espresso</th>
+          <th>American</th>
+          <th>Latte</th>
+          <th>Cold brew</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>Drink as is.</td>
+          <td>Add water to make an 8oz (237ml) coffee.</td>
+          <td>Add milk to make an 8oz (237ml) coffee.</td>
+          <td>Add room temperature or ice water to make an 8oz (237ml) cold brew.</td>
+        </tr>
+      </tbody>
     </Table>
   </div>
 
@@ -98,7 +102,7 @@ const Instructions = props => {
     props.method.method === 'Cold brew' ? coldBrew :
     '';
 
-  const tips = <Table bordered hover variant={props.theme}>
+  const tips = <Table hover variant={props.theme}>
     <thead>
       <tr>
         <th>Taste</th>
