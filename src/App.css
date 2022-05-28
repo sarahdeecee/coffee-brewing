@@ -4,7 +4,7 @@
 }
 
 #top {
-  padding-top: 65px;
+  padding-top: 4em;
 }
 
 .form-label {
@@ -12,5 +12,5 @@
 }
 
 .navbar {
-  padding: 0.7em;
+  padding: 0.5em 0.7em;
 }
