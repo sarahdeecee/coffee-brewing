@@ -1,6 +1,5 @@
 import * as React from 'react';
-import { Navbar, Nav, Container, Button, ButtonGroup } from 'react-bootstrap';
-import styles from '../styles/theme.scss';
+import { Navbar, Nav, Button, ButtonGroup } from 'react-bootstrap';
 
 const NavMenu = props => {
   const {theme, setTheme, size, setSize} = props;

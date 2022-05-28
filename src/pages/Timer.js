@@ -1,5 +1,5 @@
-import React, { Component } from 'react';
-import { Button, ButtonGroup, Row, Col } from 'react-bootstrap';
+import React from 'react';
+import { Button, ButtonGroup } from 'react-bootstrap';
 
 const Timer = props => {
   const { theme, timeLeft, setTimeLeft, timerOn, setTimerOn, brewTime } = props;
