@@ -1,5 +1,5 @@
 import * as React from 'react';
-import { Navbar, Nav, Container } from 'react-bootstrap';
+import { Navbar, Nav, Container, Button, ButtonGroup } from 'react-bootstrap';
 
 const NavMenu = props => {
   return (
@@ -9,7 +9,7 @@ const NavMenu = props => {
         <Navbar.Toggle aria-controls="basic-navbar-nav" />
         <Navbar.Collapse id="basic-navbar-nav">
           <Nav className="me-auto">
-            <Nav.Link href="#home">Dark Mode</Nav.Link>
+            {/* <Nav.Link href="#">Dark Mode</Nav.Link> */}
             <Nav.Link href="#instructions">Instructions</Nav.Link>
             <Nav.Link href="#tips">Tips</Nav.Link>
           </Nav>

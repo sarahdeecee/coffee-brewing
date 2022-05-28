@@ -123,10 +123,10 @@ const Instructions = props => {
     </tbody>
   </Table>
 
-  return <div>
+  return <div id="instructions">
     <h2>Instructions</h2>
     {instructions}
-    <h3>Tips</h3>
+    <h3 id="tips">Tips</h3>
     {tips}
   </div>
 }

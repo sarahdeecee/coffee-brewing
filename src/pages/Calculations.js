@@ -59,7 +59,7 @@ const Calculations = props => {
   const optionsSelect = options.map(option => <option key={option}>{option}</option>);
   
   return <>
-    <Form>
+    <Form id="top">
       <Form.Group as={Row} className="mb-3">
         <Form.Label column sm="2">Brewing Method</Form.Label>
         <Col sm="10">
