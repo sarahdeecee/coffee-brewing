@@ -25,27 +25,27 @@ const Calculations = props => {
   const brewMethods = {
     'Pour over': {
       ratio: 60,
-      grind: 'Medium',
+      grind: 'Medium to medium-fine',
       temperature: 'Hot'
     },
     'French press': {
       ratio: 60,
-      grind: '',
+      grind: 'Coarse',
       temperature: ''
     },
     'Aeropress': {
       ratio: 62.5,
-      grind: '',
+      grind: 'Medium to fine',
       temperature: ''
     },
     'Moka pot': {
       ratio: 130,
-      grind: '',
+      grind: 'Fine',
       temperature: ''
     },
     'Cold brew': {
       ratio: 125,
-      grind: '',
+      grind: 'Extra coarse',
       temperature: ''
     }
   };
