@@ -28,6 +28,9 @@ const NavMenu = props => {
               <Button variant={buttonVariant} onClick={upsizeFont} disabled={size === 7}>+</Button>
             </ButtonGroup>
           </Nav.Link>
+          <Nav.Link href="#timer">
+            <Button size="sm" variant={buttonVariant}>Timer</Button>
+          </Nav.Link>
           <Nav.Link href="#instructions">
             <Button size="sm" variant={buttonVariant}>Instructions</Button>
           </Nav.Link>

@@ -7,9 +7,16 @@ const Timer = props => {
   const formattedMinutes = (timeLeft.hours && timeLeft.minutes < 10) ? `0${timeLeft.minutes}:`: `${timeLeft.minutes}:`;
   const formattedSeconds = (timeLeft.seconds < 10) ? `0${timeLeft.seconds}`: timeLeft.seconds;
   const formattedTimer = `${formattedHours}${formattedMinutes}${formattedSeconds}`;
+  const timerAtZero = (timeLeft.hours === 0 && timeLeft.minutes === 0 && timeLeft.seconds === 0);
 
   const handleTimer = () => {
-    timerOn ? setTimerOn(false) : setTimerOn(true);
+    if (timeLeft === {hours: 0, minutes: 0, seconds: 0}) {
+      setTimeLeft(brewTime).then(
+        timerOn ? setTimerOn(false) : setTimerOn(true)
+      );
+    } else {
+      timerOn ? setTimerOn(false) : setTimerOn(true);
+    }
   }
   const handleCancelTimer = () => {
     setTimerOn(false);
@@ -18,8 +25,8 @@ const Timer = props => {
   return <div className="text-center">
     <Button className="col-10 mb-3" size="lg" id="timer" variant={`${theme === 'dark' ? 'light' : 'dark'}`}> {formattedTimer}</Button>
       <ButtonGroup className="col-lg-6 col-10">
-          <Button size="lg" onClick={handleTimer} variant={`outline-success`}>{timerOn ? 'Pause' : 'Start'}</Button>
-          <Button size="lg" onClick={handleCancelTimer} variant='outline-danger'>Cancel</Button>
+          <Button size="lg" onClick={handleTimer} variant={`outline-success`} disabled={timerAtZero} >{(timerOn && !timerAtZero) ? 'Pause' : 'Start'}</Button>
+          <Button size="lg" onClick={handleCancelTimer} variant='outline-danger'>{timerAtZero ? 'Reset' : 'Cancel'}</Button>
       </ButtonGroup>
   </div>  
 }

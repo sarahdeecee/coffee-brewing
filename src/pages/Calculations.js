@@ -117,8 +117,8 @@ const Calculations = props => {
         </Col>
       </Form.Group>
     </Form>
-    <Instructions method={method} brewWater={brewWater} theme={theme} />
     <Timer method={method} brewWater={brewWater} theme={theme} timeLeft={timeLeft} setTimeLeft={setTimeLeft} timerOn={timerOn} setTimerOn={setTimerOn} brewTime={brewMethods[method.method].timer} />
+    <Instructions method={method} brewWater={brewWater} theme={theme} />
   </>
 }
 

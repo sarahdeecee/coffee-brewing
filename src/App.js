@@ -14,21 +14,23 @@ function App() {
     seconds: 0
   });
   const [timerOn, setTimerOn] = useState(false);
+  const [timerStop, setTimerStop] = useState(true);
 
   const calculateTimeLeft = () => {
-    if (timeLeft.seconds === 0) {
-      if (timeLeft.minutes === 0) {
-        if (timeLeft.hours === 0) {
-          setTimerOn(false);
-          return 0;
+    if (timerOn) {
+      if (timeLeft.seconds === 0) {
+        if (timeLeft.minutes === 0) {
+          if (timeLeft.hours !== 0) {
+            return {...timeLeft, hours: timeLeft.hours - 1, minutes: 59};
+          }
         } else {
-          return {...timeLeft, hours: timeLeft.hours - 1, minutes: 59};
+          return {...timeLeft, minutes: timeLeft.minutes - 1, seconds: 59};
         }
+        setTimerOn(false);
+        return {hours: 0, minutes: 0, seconds: 0};
       } else {
-        return {...timeLeft, minutes: timeLeft.minutes - 1, seconds: 59};
+        return {...timeLeft, seconds: timeLeft.seconds - 1};
       }
-    } else {
-      return {...timeLeft, seconds: timeLeft.seconds - 1};
     }
   };
 
@@ -37,6 +39,7 @@ function App() {
       const timer = setTimeout(() => {
         setTimeLeft(calculateTimeLeft());
       }, 1000);
+      return () => clearInterval(timer);
     }
   });
 
