@@ -71,6 +71,7 @@ const Calculations = props => {
           <Col sm="10">
             <InputGroup>
               <Form.Control type="number" name="brew-coffee" onChange={handleCoffeeChange} value={method.coffee ? method.coffee : ''}/>
+              <InputGroup.Text>g</InputGroup.Text>
             </InputGroup>
           </Col>
       </Form.Group>
@@ -85,6 +86,7 @@ const Calculations = props => {
               onChange={handleRatioChange} 
               value={method.ratio}
             />
+            <InputGroup.Text>g/L</InputGroup.Text>
           </InputGroup>
         </Col>
       </Form.Group>
