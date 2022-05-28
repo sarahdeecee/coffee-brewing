@@ -10,7 +10,7 @@ function App() {
   return (
     <div className={`App ${theme}`}>
       <Container fluid>
-        <NavMenu theme={theme} />
+        <NavMenu theme={theme} setTheme={setTheme} />
         <Calculations theme={theme} />
       </Container>
     </div>
