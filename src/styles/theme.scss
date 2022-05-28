@@ -10,6 +10,28 @@
   --theme-page-text: rgb(210, 210, 210)
 }
 
+.size-1 {
+  --font-size: xx-small;
+}
+.size-2 {
+  --font-size: x-small;
+}
+.size-3 {
+  --font-size: small;
+}
+.size-4 {
+  --font-size: medium;
+}
+.size-5 {
+  --font-size: large;
+}
+.size-6 {
+  --font-size: larger;
+}
+.size-7 {
+  --font-size: x-large;
+}
+
 .App, .navbar, .form-control, .form-select, html {
   background: var(--theme-page-background);
   color: var(--theme-page-text);
@@ -17,4 +39,7 @@
 
 #nav-title, a, .form-control-plaintext {
   color: var(--theme-page-text);
+}
+p, .form-control-plaintext, .form-select, .form-label, li, th, td {
+  font-size: var(--font-size);
 }

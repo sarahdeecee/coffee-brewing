@@ -6,12 +6,12 @@ import NavMenu from './pages/NavMenu';
 import { Container } from 'react-bootstrap'
 
 function App() {
-  const [theme, setTheme] = useState('dark');
-  const [size, setSize] = useState(3);
+  const [theme, setTheme] = useState('light');
+  const [size, setSize] = useState(4);
   return (
-    <div className={`App ${theme}`}>
+    <div className={`App ${theme} size-${size}`}>
       <Container fluid>
-        <NavMenu theme={theme} setTheme={setTheme} />
+        <NavMenu theme={theme} setTheme={setTheme} size={size} setSize={setSize} />
         <Calculations theme={theme} />
       </Container>
     </div>
