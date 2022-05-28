@@ -12,11 +12,14 @@ const Calculations = props => {
   const handleMethodChange = (event) => {
     setMethod({...method, method: event.target.value, ratio: brewMethods[event.target.value].ratio });
   };
-  const handleCoffeeChange = (event) => {
+  const handleRatioChange = (event) => {
     setMethod({...method, ratio: event.target.value });
   };
+  const handleCoffeeChange = (event) => {
+    setMethod({...method, coffee: event.target.value });
+  };
 
-  const brewWater = method.ratio * method.coffee;
+  const brewWater = Math.floor(method.coffee / method.ratio * 1000);
 
   const brewMethods = {
     'Pour over': {
@@ -58,10 +61,13 @@ const Calculations = props => {
         </Col>
       </Form.Group>
       <Form.Group as={Row} className="mb-3">
-        <Form.Label column sm="2">Amount of Coffee:</Form.Label>
-        <Col sm="10">
-          <Form.Control type="number" name="brew-coffee" value={method.coffee ? method.coffee : ''}/>
-        </Col>
+          <Form.Label column sm="2">Amount of Coffee:</Form.Label>
+          <Col sm="10">
+            <InputGroup>
+              <Form.Control type="number" name="brew-coffee" onChange={handleCoffeeChange} value={method.coffee ? method.coffee : ''}/>
+              <InputGroup.Text id="basic-addon2">g</InputGroup.Text>
+            </InputGroup>
+          </Col>
       </Form.Group>
       <Form.Group as={Row} className="mb-3">
         <Form.Label column sm="2">Brew Ratio:</Form.Label>
@@ -71,7 +77,7 @@ const Calculations = props => {
               aria-label="Recipient's username"
               aria-describedby="basic-addon2"
               type="number"
-              onChange={handleCoffeeChange} 
+              onChange={handleRatioChange} 
               value={method.ratio}
             />
             <InputGroup.Text id="basic-addon2">g/L</InputGroup.Text>
@@ -91,7 +97,6 @@ const Calculations = props => {
         </Col>
       </Form.Group>
     </Form>
-    <p>{method.method}, {method.coffee}, {method.ratio}</p>
   </div>
 }
 
