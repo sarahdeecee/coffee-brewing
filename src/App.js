@@ -44,7 +44,7 @@ function App() {
 
   return (
     <div className={`App ${theme} size-${size}`}>
-      <Container fluid>
+      <Container fluid className="App-container">
         <NavMenu theme={theme} setTheme={setTheme} size={size} setSize={setSize} />
         <Calculations theme={theme} timeLeft={timeLeft} setTimeLeft={setTimeLeft} timerOn={timerOn} setTimerOn={setTimerOn} />
       </Container>

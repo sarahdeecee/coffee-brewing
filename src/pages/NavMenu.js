@@ -1,5 +1,5 @@
 import * as React from 'react';
-import { Navbar, Nav, Button, ButtonGroup } from 'react-bootstrap';
+import { Navbar, Nav, Button, ButtonGroup, Container } from 'react-bootstrap';
 
 const NavMenu = props => {
   const {theme, setTheme, size, setSize} = props;
@@ -13,6 +13,7 @@ const NavMenu = props => {
 
   return (
     <Navbar fixed="top" expand="sm" bg={theme} variant={theme}>
+      <Container className="App-container">
       <Navbar.Brand href="#top" id="nav-title">Coffee Brewing</Navbar.Brand>
       <Navbar.Toggle aria-controls="basic-navbar-nav" />
       <Navbar.Collapse id="basic-navbar-nav">
@@ -38,6 +39,7 @@ const NavMenu = props => {
           </Nav.Link>
         </Nav>
       </Navbar.Collapse>
+    </Container>
     </Navbar>
   )
 };
