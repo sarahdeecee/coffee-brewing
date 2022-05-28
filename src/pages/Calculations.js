@@ -13,10 +13,10 @@ const Calculations = props => {
     setMethod({...method, method: event.target.value, ratio: brewMethods[event.target.value].ratio });
   };
   const handleCoffeeChange = (event) => {
-    setMethod(prev => prev, { ratio: event.target.value });
+    setMethod({...method, ratio: event.target.value });
   };
 
-  const brewWater = method.ratio;
+  const brewWater = method.ratio * method.coffee;
 
   const brewMethods = {
     'Pour over': {
