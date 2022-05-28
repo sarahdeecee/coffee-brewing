@@ -58,7 +58,7 @@ const Calculations = props => {
   const options = ['Pour over','French press', 'Aeropress', 'Moka pot', 'Cold brew'];
   const optionsSelect = options.map(option => <option key={option}>{option}</option>);
   
-  return <div className="">
+  return <>
     <Form>
       <Form.Group as={Row} className="mb-3">
         <Form.Label column sm="2">Brewing Method</Form.Label>
@@ -71,7 +71,6 @@ const Calculations = props => {
           <Col sm="10">
             <InputGroup>
               <Form.Control type="number" name="brew-coffee" onChange={handleCoffeeChange} value={method.coffee ? method.coffee : ''}/>
-              <InputGroup.Text id="basic-addon2">g</InputGroup.Text>
             </InputGroup>
           </Col>
       </Form.Group>
@@ -86,31 +85,30 @@ const Calculations = props => {
               onChange={handleRatioChange} 
               value={method.ratio}
             />
-            <InputGroup.Text id="basic-addon2">g/L</InputGroup.Text>
           </InputGroup>
         </Col>
       </Form.Group>
-      <Form.Group as={Row} className="mb-3">
+      <Form.Group as={Row} className="mb-3 align-items-center">
         <Form.Label column sm="2">Amount of Water:</Form.Label>
         <Col sm="10">
-          {brewWater} ml
+            {brewWater} ml
         </Col>
       </Form.Group>
-      <Form.Group as={Row} className="mb-3">
+      <Form.Group as={Row} className="mb-3 align-items-center">
         <Form.Label column sm="2">Water Temperature:</Form.Label>
         <Col sm="10">
-          {brewMethods[method.method].temperature}
+            {brewMethods[method.method].temperature}
         </Col>
       </Form.Group>
-      <Form.Group as={Row} className="mb-3">
+      <Form.Group as={Row} className="mb-3 align-items-center">
         <Form.Label column sm="2">Brew Time:</Form.Label>
         <Col sm="10">
-          0:00
+            {brewMethods[method.method].time} seconds
         </Col>
       </Form.Group>
     </Form>
     <Instructions method={method} brewWater={brewWater} />
-  </div>
+  </>
 }
 
 export default Calculations;
