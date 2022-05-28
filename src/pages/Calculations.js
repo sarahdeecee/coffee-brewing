@@ -1,9 +1,11 @@
 import * as React from 'react';
 import Instructions from './Instructions';
+import Timer from './Timer';
 import { useState } from 'react';
 import { Form, FormControl, InputGroup, Row, Col } from 'react-bootstrap';
 
 const Calculations = props => {
+  const { theme, timeLeft, setTimeLeft, setTimerOn } = props;
   const [method, setMethod] = useState({
     method: 'Pour over',
     ratio: 60,
@@ -109,7 +111,8 @@ const Calculations = props => {
         </Col>
       </Form.Group>
     </Form>
-    <Instructions method={method} brewWater={brewWater} theme={props.theme} />
+    <Instructions method={method} brewWater={brewWater} theme={theme} />
+    <Timer method={method} brewWater={brewWater} theme={theme} timeLeft={timeLeft} setTimeLeft={setTimeLeft} setTimerOn={setTimerOn} />
   </>
 }
 
