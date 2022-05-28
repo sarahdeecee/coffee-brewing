@@ -9,9 +9,9 @@ function App() {
   const [theme, setTheme] = useState('light');
   const [size, setSize] = useState(4);
   const [timeLeft, setTimeLeft] = useState({
-    hours: 10,
-    minutes: 10,
-    seconds: 10
+    hours: 0,
+    minutes: 2,
+    seconds: 0
   });
   const [timerOn, setTimerOn] = useState(false);
 

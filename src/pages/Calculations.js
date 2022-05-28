@@ -11,16 +11,6 @@ const Calculations = props => {
     ratio: 60,
     coffee: 0
   });
-  
-  const handleMethodChange = (event) => {
-    setMethod({...method, method: event.target.value, ratio: brewMethods[event.target.value].ratio });
-  };
-  const handleRatioChange = (event) => {
-    setMethod({...method, ratio: event.target.value });
-  };
-  const handleCoffeeChange = (event) => {
-    setMethod({...method, coffee: event.target.value });
-  };
 
   const brewWater = Math.floor(method.coffee / method.ratio * 1000);
 
@@ -29,32 +19,48 @@ const Calculations = props => {
       ratio: 60,
       grind: 'Medium to medium-fine',
       temperature: '98°C (just off the boil)',
-      time: '2 minutes'
+      time: '2 minutes',
+      timer: {hours: 0, minutes: 2, seconds: 0}
     },
     'French press': {
       ratio: 60,
       grind: 'Coarse',
       temperature: '94°C (let sit for 1 min after boiling)',
-      time: '4 minutes'
+      time: '4 minutes',
+      timer: {hours: 0, minutes: 4, seconds: 0}
     },
     'Aeropress': {
       ratio: 62.5,
       grind: 'Medium to fine',
       temperature: '80°C',
-      time: '10 seconds'
+      time: '10 seconds',
+      timer: {hours: 0, minutes: 0, seconds: 10}
     },
     'Moka pot': {
       ratio: 130,
       grind: 'Fine',
       temperature: '95°C',
-      time: '4-5 minutes'
+      time: '4-5 minutes',
+      timer: {hours: 0, minutes: 5, seconds: 0}
     },
     'Cold brew': {
       ratio: 125,
       grind: 'Extra coarse',
       temperature: 'Room temperature or cold',
-      time: '12-24 hours'
+      time: '12-24 hours',
+      timer: {hours: 24, minutes: 0, seconds: 0}
     }
+  };
+
+  const handleMethodChange = (event) => {
+    setMethod({...method, method: event.target.value, ratio: brewMethods[event.target.value].ratio });
+    setTimeLeft(brewMethods[event.target.value].timer)
+  };
+  const handleRatioChange = (event) => {
+    setMethod({...method, ratio: event.target.value });
+  };
+  const handleCoffeeChange = (event) => {
+    setMethod({...method, coffee: event.target.value });
   };
 
   const options = ['Pour over','French press', 'Aeropress', 'Moka pot', 'Cold brew'];
@@ -112,7 +118,7 @@ const Calculations = props => {
       </Form.Group>
     </Form>
     <Instructions method={method} brewWater={brewWater} theme={theme} />
-    <Timer method={method} brewWater={brewWater} theme={theme} timeLeft={timeLeft} setTimeLeft={setTimeLeft} setTimerOn={setTimerOn} />
+    <Timer method={method} brewWater={brewWater} theme={theme} timeLeft={timeLeft} setTimeLeft={setTimeLeft} setTimerOn={setTimerOn} brewTime={brewMethods[method.method].timer} />
   </>
 }
 
