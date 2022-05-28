@@ -88,22 +88,22 @@ const Calculations = props => {
           </InputGroup>
         </Col>
       </Form.Group>
-      <Form.Group as={Row} className="mb-3 align-items-center">
+      <Form.Group as={Row} className="mb-3">
         <Form.Label column sm="2">Amount of Water:</Form.Label>
         <Col sm="10">
-            {brewWater} ml
+          <Form.Control plaintext readOnly value={brewWater + ' ml'} />
         </Col>
       </Form.Group>
-      <Form.Group as={Row} className="mb-3 align-items-center">
+      <Form.Group as={Row} className="mb-3">
         <Form.Label column sm="2">Water Temperature:</Form.Label>
         <Col sm="10">
-            {brewMethods[method.method].temperature}
+        <Form.Control plaintext readOnly value={brewMethods[method.method].temperature} />
         </Col>
       </Form.Group>
-      <Form.Group as={Row} className="mb-3 align-items-center">
+      <Form.Group as={Row} className="mb-3">
         <Form.Label column sm="2">Brew Time:</Form.Label>
         <Col sm="10">
-            {brewMethods[method.method].time}
+          <Form.Control plaintext readOnly value={brewMethods[method.method].time} />
         </Col>
       </Form.Group>
     </Form>
