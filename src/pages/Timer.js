@@ -22,11 +22,12 @@ const Timer = props => {
     setTimerOn(false);
     setTimeLeft(brewTime); 
   }
+
   return <div className="text-center">
     <Button className="col-10 mb-3" size="lg" id="timer" variant={`${theme === 'dark' ? 'light' : 'dark'}`}> {formattedTimer}</Button>
       <ButtonGroup className="col-lg-6 col-10">
-          <Button size="lg" onClick={handleTimer} variant={`outline-success`} disabled={timerAtZero} >{(timerOn && !timerAtZero) ? 'Pause' : 'Start'}</Button>
-          <Button size="lg" onClick={handleCancelTimer} variant='outline-danger'>{timerAtZero ? 'Reset' : 'Cancel'}</Button>
+          <Button size="lg" onClick={handleTimer} variant={(timerOn && !timerAtZero) ? 'outline-success' : 'success'} disabled={timerAtZero} >{(timerOn && !timerAtZero) ? 'Pause' : 'Start'}</Button>
+          <Button size="lg" onClick={handleCancelTimer} variant='danger'>{(timerOn && !timerAtZero) ? 'Cancel' : 'Reset'}</Button>
       </ButtonGroup>
   </div>  
 }

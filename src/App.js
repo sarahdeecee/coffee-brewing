@@ -14,7 +14,6 @@ function App() {
     seconds: 0
   });
   const [timerOn, setTimerOn] = useState(false);
-  const [timerStop, setTimerStop] = useState(true);
 
   const calculateTimeLeft = () => {
     if (timerOn) {
