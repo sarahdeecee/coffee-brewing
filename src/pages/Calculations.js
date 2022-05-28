@@ -107,7 +107,7 @@ const Calculations = props => {
         </Col>
       </Form.Group>
     </Form>
-    <Instructions method={method} brewWater={brewWater} />
+    <Instructions method={method} brewWater={brewWater} theme={props.theme} />
   </>
 }
 

@@ -98,7 +98,7 @@ const Instructions = props => {
     props.method.method === 'Cold brew' ? coldBrew :
     '';
 
-  const tips = <Table bordered hover>
+  const tips = <Table bordered hover variant={props.theme}>
     <thead>
       <tr>
         <th>Taste</th>
