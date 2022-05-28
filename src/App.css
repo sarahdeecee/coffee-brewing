@@ -14,3 +14,7 @@
 .navbar {
   padding: 0.5em 0.7em;
 }
+
+#timer {
+  font-size: 3em;
+}
