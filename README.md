@@ -2,7 +2,7 @@
 Coffee Brewing is a single-page app that assists the user with various coffee brewing methods.
 
 ## Features
-- Includes instrutions for pour over, french press, aeropress, moka pot, and cold brew methods
+- Includes instructions for pour over, french press, aeropress, moka pot, and cold brew methods
 - Automatically calculates amount of water needed for brew based on grams of coffee
 - Adjustable brew ratios
 - Start & stop timer for easy brewing
