@@ -7,6 +7,7 @@ import { Container } from 'react-bootstrap'
 
 function App() {
   const [theme, setTheme] = useState('dark');
+  const [size, setSize] = useState(3);
   return (
     <div className={`App ${theme}`}>
       <Container fluid>
