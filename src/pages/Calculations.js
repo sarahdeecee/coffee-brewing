@@ -69,14 +69,14 @@ const Calculations = props => {
   return <>
     <Form id="top">
       <Form.Group as={Row} className="mb-3">
-        <Form.Label column sm="2">Brewing Method</Form.Label>
-        <Col sm="10">
-          <Form.Select sm="10" onChange={handleMethodChange}>{optionsSelect}</Form.Select>
+        <Form.Label column xs="6" md="3">Brewing Method</Form.Label>
+        <Col xs="6" md="9">
+          <Form.Select md="9" onChange={handleMethodChange}>{optionsSelect}</Form.Select>
         </Col>
       </Form.Group>
       <Form.Group as={Row} className="mb-3">
-          <Form.Label column sm="2">Amount of Coffee:</Form.Label>
-          <Col sm="10">
+          <Form.Label column xs="6" md="3">Amount of Coffee:</Form.Label>
+          <Col xs="6" md="9">
             <InputGroup>
               <Form.Control type="number" name="brew-coffee" onChange={handleCoffeeChange} value={method.coffee ? method.coffee : ''}/>
               <InputGroup.Text>g</InputGroup.Text>
@@ -84,8 +84,8 @@ const Calculations = props => {
           </Col>
       </Form.Group>
       <Form.Group as={Row} className="mb-3">
-        <Form.Label column sm="2">Brew Ratio:</Form.Label>
-        <Col sm="10">
+        <Form.Label column xs="6" md="3">Brew Ratio:</Form.Label>
+        <Col xs="6" md="9">
           <InputGroup>
             <FormControl
               aria-label="Recipient's username"
@@ -99,20 +99,20 @@ const Calculations = props => {
         </Col>
       </Form.Group>
       <Form.Group as={Row} className="mb-3">
-        <Form.Label column sm="2">Amount of Water:</Form.Label>
-        <Col sm="10">
+        <Form.Label column xs="6" md="3">Amount of Water:</Form.Label>
+        <Col xs="6" md="9">
           <Form.Control plaintext readOnly value={brewWater + ' ml'} />
         </Col>
       </Form.Group>
       <Form.Group as={Row} className="mb-3">
-        <Form.Label column sm="2">Water Temperature:</Form.Label>
-        <Col sm="10">
+        <Form.Label column xs="6" md="3">Water Temperature:</Form.Label>
+        <Col xs="6" md="9">
         <Form.Control plaintext readOnly value={brewMethods[method.method].temperature} />
         </Col>
       </Form.Group>
       <Form.Group as={Row} className="mb-3">
-        <Form.Label column sm="2">Brew Time:</Form.Label>
-        <Col sm="10">
+        <Form.Label column xs="6" md="3">Brew Time:</Form.Label>
+        <Col xs="6" md="9">
           <Form.Control plaintext readOnly value={brewMethods[method.method].time} />
         </Col>
       </Form.Group>

@@ -6,9 +6,23 @@ Coffee Brewing is a single-page app that assists the user with various coffee br
 - Automatically calculates amount of water needed for brew based on grams of coffee
 - Adjustable brew ratios
 - Start & stop timer for easy brewing
+
 ### Accessibility
 - Light and Dark modes
 - Adjustable font size
+
+## Screenshots
+- Desktop version, light mode
+![Desktop version, light mode](/public/screenshots/desktop-light.png)
+
+- Desktop version, dark mode
+![Desktop version, dark mode](/public/screenshots/desktop-dark.png)
+
+- Desktop version, increased font size
+![Desktop version, bigger font](/public/screenshots/desktop-big.png)
+
+- Mobile version
+![Mobile version](/public/screenshots/mobile.png)
 
 ## How to Run
 
