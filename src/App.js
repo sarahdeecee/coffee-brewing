@@ -2,7 +2,7 @@ import './App.css';
 import './styles/theme.scss';
 import { useEffect, useState } from 'react';
 import Calculations from './pages/Calculations';
-import Tips from './pages/Tips';
+import Tips from './data/Tips';
 import NavMenu from './pages/NavMenu';
 import { Container } from 'react-bootstrap'
 
@@ -15,6 +15,11 @@ function App() {
     seconds: 0
   });
   const [timerOn, setTimerOn] = useState(false);
+  const [method, setMethod] = useState({
+    method: 'Pour over',
+    ratio: 60,
+    coffee: 0
+  });
 
   const calculateTimeLeft = () => {
     if (timerOn) {
@@ -47,7 +52,7 @@ function App() {
     <div className={`App ${theme} size-${size}`}>
       <Container fluid className="App-container">
         <NavMenu theme={theme} setTheme={setTheme} size={size} setSize={setSize} />
-        <Calculations theme={theme} timeLeft={timeLeft} setTimeLeft={setTimeLeft} timerOn={timerOn} setTimerOn={setTimerOn} />
+        <Calculations theme={theme} timeLeft={timeLeft} setTimeLeft={setTimeLeft} timerOn={timerOn} setTimerOn={setTimerOn} method={method} setMethod={setMethod} />
         <Tips />
       </Container>
     </div>
