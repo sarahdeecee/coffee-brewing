@@ -12,7 +12,7 @@ const NavMenu = props => {
   const resetFont = () => setSize(4);
 
   return (
-    <Navbar fixed="top" expand="sm" bg={theme} variant={theme}>
+    <Navbar fixed="top" expand="sm" id="menu" bg={theme} variant={theme}>
       <Container className="App-container">
       <Navbar.Brand href="#top" id="nav-title">Coffee Brewing</Navbar.Brand>
       <Navbar.Toggle aria-controls="basic-navbar-nav" />

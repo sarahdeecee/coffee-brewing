@@ -2,6 +2,7 @@ import './App.css';
 import './styles/theme.scss';
 import { useEffect, useState } from 'react';
 import Calculations from './pages/Calculations';
+import Tips from './pages/Tips';
 import NavMenu from './pages/NavMenu';
 import { Container } from 'react-bootstrap'
 
@@ -47,6 +48,7 @@ function App() {
       <Container fluid className="App-container">
         <NavMenu theme={theme} setTheme={setTheme} size={size} setSize={setSize} />
         <Calculations theme={theme} timeLeft={timeLeft} setTimeLeft={setTimeLeft} timerOn={timerOn} setTimerOn={setTimerOn} />
+        <Tips />
       </Container>
     </div>
   );

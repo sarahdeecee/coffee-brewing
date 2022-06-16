@@ -2,19 +2,20 @@ import * as React from 'react';
 import { Table } from 'react-bootstrap';
 
 const Instructions = props => {
+  const {brewWater, method, theme} = props;
   const pourOver = <div>
     <ol>
       <li>
         Rinse paper filter with hot water.
       </li>
       <li>
-        Bloom with {Math.ceil(props.brewWater * 0.12)}ml, wait 30-45s.
+        Bloom with {Math.ceil(brewWater * 0.12)}ml, wait 30-45s.
       </li>
       <li>
-        Pour {Math.ceil(props.brewWater * 0.48)}ml in 30s. — Total: {Math.ceil(props.brewWater * 0.6)}ml
+        Pour {Math.ceil(brewWater * 0.48)}ml in 30s. — Total: {Math.ceil(brewWater * 0.6)}ml
       </li>
       <li>
-        Pour {Math.ceil(props.brewWater * 0.4)}ml in 30s. — Total: {props.brewWater}ml
+        Pour {Math.ceil(brewWater * 0.4)}ml in 30s. — Total: {brewWater}ml
       </li>
       <li>
         Stir 1x clockwise and 1x counterclockwise, swirl, and let it draw down. It will take a lot longer if you’re using the Chemex as opposed to the V60.
@@ -42,7 +43,7 @@ const Instructions = props => {
       <li>Insert plunger and press gently, pausing when you feel resistance, until plunger reaches grounds.</li>
       <li>Remove filter cap, push plunder to eject used coffee and rinse seal.</li>
     </ol>
-    <Table variant={props.theme}>
+    <Table variant={theme}>
       <thead>
         <tr>
           <th>Espresso</th>
@@ -89,49 +90,22 @@ const Instructions = props => {
   const coldBrew = <div>
     <ol>
       <li>Gind your beans coarsely.</li>  
-      <li>Add {props.brewWater}ml room temperature or cold water. Filtered water is preferred. (Produces a 1:8 ratio or coffee to water).</li>  
+      <li>Add {brewWater}ml room temperature or cold water. Filtered water is preferred. (Produces a 1:8 ratio or coffee to water).</li>  
       <li>Wait 12-18 hours at room temperature, or 18-24 hours in the fridge.</li>  
       <li>Strain the coffee.</li>
     </ol>
   </div>
 
-  const instructions = props.method.method === 'Pour over' ? pourOver : 
-    props.method.method === 'French press' ? frenchPress :
-    props.method.method === 'Aeropress' ? aeropress :
-    props.method.method === 'Moka pot' ? mokaPot : 
-    props.method.method === 'Cold brew' ? coldBrew :
+  const instructions = method.method === 'Pour over' ? pourOver : 
+    method.method === 'French press' ? frenchPress :
+    method.method === 'Aeropress' ? aeropress :
+    method.method === 'Moka pot' ? mokaPot : 
+    method.method === 'Cold brew' ? coldBrew :
     '';
-
-  const tips = <Table hover variant={props.theme}>
-    <thead>
-      <tr>
-        <th>Taste</th>
-        <th>Brew Time</th>
-        <th>Water Temperature</th>
-        <th>Grind Size</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr>
-        <th>Sour</th>
-        <td>Increase</td>
-        <td>Decrease</td>
-        <td>Finer</td>
-      </tr>
-      <tr>
-        <th>Bitter</th>
-        <td>Decrease</td>
-        <td>Hotter</td>
-        <td>Coarser</td>
-      </tr>
-    </tbody>
-  </Table>
 
   return <div id="instructions">
     <h2>Instructions</h2>
     {instructions}
-    <h3 id="tips">Tips</h3>
-    {tips}
   </div>
 }
 

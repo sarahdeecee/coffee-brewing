@@ -23,8 +23,8 @@ const Timer = props => {
     setTimeLeft(brewTime); 
   }
 
-  return <div className="text-center">
-    <Button className="col-10 mb-3" size="lg" id="timer" variant={`${theme === 'dark' ? 'light' : 'dark'}`}> {formattedTimer}</Button>
+  return <div className="text-center" id="display">
+    <Button className="col-10 mb-3" size="lg" id="timer-display" variant={`${theme === 'dark' ? 'light' : 'dark'}`}> {formattedTimer}</Button>
       <ButtonGroup className="col-lg-6 col-10">
           <Button size="lg" onClick={handleTimer} variant={(timerOn && !timerAtZero) ? 'outline-success' : 'success'} disabled={timerAtZero} >{(timerOn && !timerAtZero) ? 'Pause' : 'Start'}</Button>
           <Button size="lg" onClick={handleCancelTimer} variant='danger'>{(timerOn && !timerAtZero) ? 'Cancel' : 'Reset'}</Button>
