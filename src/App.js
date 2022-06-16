@@ -51,13 +51,15 @@ function App() {
     }
   });
 
+  const brewWater = Math.floor(method.coffee / method.ratio * 1000);
+
   return (
     <div className={`App ${theme} size-${size}`}>
       <Container fluid className="App-container">
         <NavMenu theme={theme} setTheme={setTheme} size={size} setSize={setSize} />
         <Calculations theme={theme} timeLeft={timeLeft} setTimeLeft={setTimeLeft} timerOn={timerOn} setTimerOn={setTimerOn} method={method} setMethod={setMethod} />
         <Timer method={method} theme={theme} timeLeft={timeLeft} setTimeLeft={setTimeLeft} timerOn={timerOn} setTimerOn={setTimerOn} brewTime={brewMethods[method.method].timer} />
-        <Instructions method={method} brewWater={method.brewWater} theme={theme} />
+        <Instructions method={method} brewWater={brewWater} theme={theme} />
         <Tips />
       </Container>
     </div>
