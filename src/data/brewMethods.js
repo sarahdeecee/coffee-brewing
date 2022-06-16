@@ -37,7 +37,4 @@ export const brewMethods = {
 };
 
 export const options = Object.keys(brewMethods);
-console.log('options',options);
 export const optionsSelect = options.map(option => <option key={option}>{option}</option>);
-
-export default brewMethods;

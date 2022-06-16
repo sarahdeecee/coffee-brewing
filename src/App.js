@@ -4,6 +4,9 @@ import { useEffect, useState } from 'react';
 import Calculations from './pages/Calculations';
 import Tips from './data/Tips';
 import NavMenu from './pages/NavMenu';
+import Instructions from './pages/Instructions';
+import Timer from './pages/Timer';
+import {brewMethods, options, optionsSelect} from './data/brewMethods';
 import { Container } from 'react-bootstrap'
 
 function App() {
@@ -53,6 +56,8 @@ function App() {
       <Container fluid className="App-container">
         <NavMenu theme={theme} setTheme={setTheme} size={size} setSize={setSize} />
         <Calculations theme={theme} timeLeft={timeLeft} setTimeLeft={setTimeLeft} timerOn={timerOn} setTimerOn={setTimerOn} method={method} setMethod={setMethod} />
+        <Timer method={method} theme={theme} timeLeft={timeLeft} setTimeLeft={setTimeLeft} timerOn={timerOn} setTimerOn={setTimerOn} brewTime={brewMethods[method.method].timer} />
+        <Instructions method={method} brewWater={method.brewWater} theme={theme} />
         <Tips />
       </Container>
     </div>

@@ -1,9 +1,6 @@
 import * as React from 'react';
-import Instructions from './Instructions';
-import Timer from './Timer';
-import {brewMethods, optionsSelect} from '../data/brewMethods';
-import { useState } from 'react';
 import { Form, FormControl, InputGroup, Row, Col } from 'react-bootstrap';
+import {brewMethods, options, optionsSelect} from '../data/brewMethods';
 
 const Calculations = props => {
   const { theme, timeLeft, setTimeLeft, timerOn, setTimerOn, method, setMethod } = props;
@@ -72,8 +69,6 @@ const Calculations = props => {
         </Col>
       </Form.Group>
     </Form>
-    <Timer method={method} brewWater={brewWater} theme={theme} timeLeft={timeLeft} setTimeLeft={setTimeLeft} timerOn={timerOn} setTimerOn={setTimerOn} brewTime={brewMethods[method.method].timer} />
-    <Instructions method={method} brewWater={brewWater} theme={theme} />
   </>
 }
 
