@@ -6,7 +6,7 @@ import Tips from './data/Tips';
 import NavMenu from './pages/NavMenu';
 import Instructions from './pages/Instructions';
 import Timer from './pages/Timer';
-import {brewMethods, options, optionsSelect} from './data/brewMethods';
+import {brewMethods} from './data/brewMethods';
 import { Container } from 'react-bootstrap'
 
 function App() {

@@ -1,9 +1,9 @@
 import * as React from 'react';
 import { Form, FormControl, InputGroup, Row, Col } from 'react-bootstrap';
-import {brewMethods, options, optionsSelect} from '../data/brewMethods';
+import {brewMethods, optionsSelect} from '../data/brewMethods';
 
 const Calculations = props => {
-  const { theme, timeLeft, setTimeLeft, timerOn, setTimerOn, method, setMethod } = props;
+  const { setTimeLeft, method, setMethod } = props;
 
   const brewWater = Math.floor(method.coffee / method.ratio * 1000);
 
