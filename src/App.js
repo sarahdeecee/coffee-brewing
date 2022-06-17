@@ -6,7 +6,7 @@ import Tips from './data/Tips';
 import NavMenu from './pages/NavMenu';
 import Instructions from './pages/Instructions';
 import Timer from './pages/Timer';
-import {brewMethods} from './data/brewMethods';
+import { brewMethods } from './data/brewMethods';
 import { Container } from 'react-bootstrap'
 
 function App() {
@@ -18,6 +18,7 @@ function App() {
     seconds: 0
   });
   const [timerOn, setTimerOn] = useState(false);
+  const [showAlert, setShowAlert] = useState(false);
   const [method, setMethod] = useState({
     method: 'Pour over',
     ratio: 60,
@@ -35,6 +36,7 @@ function App() {
           return {...timeLeft, minutes: timeLeft.minutes - 1, seconds: 59};
         }
         setTimerOn(false);
+        setShowAlert(true);
         return {hours: 0, minutes: 0, seconds: 0};
       } else {
         return {...timeLeft, seconds: timeLeft.seconds - 1};
@@ -49,6 +51,9 @@ function App() {
       }, 1000);
       return () => clearInterval(timer);
     }
+    if (timeLeft.hours === 0 && timeLeft.minutes === 0 && timeLeft.seconds === 0) {
+      
+    }
   });
 
   const brewWater = Math.floor(method.coffee / method.ratio * 1000);
@@ -58,7 +63,7 @@ function App() {
       <Container fluid className="App-container">
         <NavMenu theme={theme} setTheme={setTheme} size={size} setSize={setSize} />
         <Calculations theme={theme} timeLeft={timeLeft} setTimeLeft={setTimeLeft} timerOn={timerOn} setTimerOn={setTimerOn} method={method} setMethod={setMethod} />
-        <Timer method={method} theme={theme} timeLeft={timeLeft} setTimeLeft={setTimeLeft} timerOn={timerOn} setTimerOn={setTimerOn} brewTime={brewMethods[method.method].timer} />
+        <Timer method={method} theme={theme} timeLeft={timeLeft} setTimeLeft={setTimeLeft} timerOn={timerOn} setTimerOn={setTimerOn} brewTime={brewMethods[method.method].timer} showAlert={showAlert} setShowAlert={setShowAlert} />
         <Instructions method={method} brewWater={brewWater} theme={theme} />
         <Tips />
       </Container>
